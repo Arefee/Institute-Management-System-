@@ -1,0 +1,79 @@
+{%extends "myInstitute/dashboard.html"%}
+{%load static%}
+{%block title%}اطلاعات زبان آموز{%endblock title%}
+{%block mybox%}
+<div class="user-pic">
+    {%if object.image%}
+    <img src="{{object.image.url}}" />
+    {%else%}
+    <img src="{%static 'myInstitute/img/defult.png'%}" />
+    {%endif%}
+</div>
+
+<div id="inform" class="d-flex flex-column">
+    <div class="d-flex flex-row">
+        <h4>نام: </h4>
+        <p>{{object.firstName}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>نام خانوادگی: </h4>
+        <p>{{object.lastName}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>نام پدر: </h4>
+        <p>{{object.fatherName}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>کد ملی:</h4>
+        <p>{{object.nationalCode}}</p>
+    </div>
+
+    <div class="d-flex flex-row">
+        <h4>شماره زبان آموز:</h4>
+        <p>{{object.studentNumber}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>تاریخ تولد :</h4>
+        <p>{{object.birthday|date:"Y-m-d"}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>آدرس :</h4>
+        <p>{{object.address}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>شماره تماس :</h4>
+        <p>{{object.homeNumber}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>شماره همراه :</h4>
+        <p>{{object.cellphoneNumber}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>ایمیل :</h4>
+        <p>{{object.email}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>ترم :</h4>
+        <a href="{%url 'myInstitute:classes-detail' object.termNumber_id%}" style="color: black">
+            <p>{{object.termNumber_id}}</p>
+        </a>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>شهریه ترم :</h4>
+        <p>{{object.paymentTerm}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>هزینه کتاب :</h4>
+        <p>{{object.paymentBook}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>وضعیت پرداخت :</h4>
+        <p> پرداخت {{object.paymentState}}</p>
+    </div>
+    <br>
+</div>
+<a class="btn btn-danger" href="{%url 'myInstitute:student-delete' object.studentNumber%}"> حذف اطلاعات</a>
+<a class="btn btn-light" href="{%url 'myInstitute:student-update' object.studentNumber%}">ویرایش اطلاعات</a>
+
+
+{%endblock mybox%}

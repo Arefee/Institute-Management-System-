@@ -1,0 +1,60 @@
+{%extends "myInstitute/dashboard.html"%}
+{%load static%}
+{%block title%}اطلاعات مدرس{%endblock title%}
+{%block mybox%}
+<div class="user-pic">
+    {%if object.image%}
+    <img src="{{object.image.url}}" />
+    {%else%}
+    <img src="{%static 'myInstitute/img/defult.png'%}" />
+    {%endif%}
+</div>
+
+<div id="inform" class="d-flex flex-column">
+    <div class="d-flex flex-row">
+        <h4>نام: </h4>
+        <p>{{object.firstName}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>نام خانوادگی: </h4>
+        <p>{{object.lastName}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>نام پدر: </h4>
+        <p>{{object.fatherName}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>کد ملی:</h4>
+        <p>{{object.nationalCode}}</p>
+    </div>
+
+    <div class="d-flex flex-row">
+        <h4>شماره مدرس:</h4>
+        <p>{{object.teacherNumber}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>تاریخ تولد :</h4>
+        <p>{{object.birthday|date:"Y-m-d"}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>آدرس :</h4>
+        <p>{{object.address}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>شماره تماس :</h4>
+        <p>{{object.homeNumber}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>شماره همراه :</h4>
+        <p>{{object.cellphoneNumber}}</p>
+    </div>
+    <div class="d-flex flex-row">
+        <h4>ایمیل :</h4>
+        <p>{{object.email}}</p>
+    </div>
+</div>
+<a class="btn btn-danger" href="{%url 'myInstitute:teacher-delete' object.teacherNumber%}"> حذف اطلاعات</a>
+<a class="btn btn-light" href="{%url 'myInstitute:teacher-update' object.teacherNumber%}">ویرایش اطلاعات</a>
+
+
+{%endblock mybox%}

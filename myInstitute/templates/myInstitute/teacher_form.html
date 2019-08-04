@@ -1,0 +1,102 @@
+{%extends "myInstitute/dashboard.html"%}
+{%load crispy_forms_tags%}
+{%block title%} اطلاعات مدرس {%endblock title%}
+{%block mybox%}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <div class="form-group">
+            <div id="div_id_firstName" class="control-group">
+                <p for="id_firstName" class="mylabel">
+                    نام : </p>
+                <div class="controls">
+                    {{ form.firstName | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_lastName" class="control-group">
+                <p for="id_lastName" class="mylabel">
+                    نام خانوادگی : </p>
+                <div class="controls">
+                    {{ form.lastName | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_fatherName" class="control-group">
+                <p for="id_fatherName" class="mylabel">
+                    نام پدر : </p>
+                <div class="controls">
+                    {{ form.fatherName | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_nationalCode" class="control-group">
+                <p for="id_nationalCode" class="mylabel">
+                    کد ملی : </p>
+                <div class="controls">
+                    {{ form.nationalCode | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_birthday" class="control-group error">
+                <p for="id_birthday" class="mylabel">
+                    تولد : </p>
+                <div class="controls">
+                    {{ form.birthday | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_homeNumber" class="control-group">
+                <p for="id_homeNumber" class="mylabel">
+                    شماره تماس : </p>
+                <div class="controls">
+                    {{ form.homeNumber | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_cellphoneNumber" class="control-group">
+                <p for="id_cellphoneNumber" class="mylabel">
+                    شماره همراه : </p>
+                <div class="controls">
+                    {{ form.cellphoneNumber | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_address" class="control-group">
+                <p for="id_address" class="mylabel">
+                    نشانی : </p>
+                <div class="controls">
+                    {{ form.address | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_email" class="control-group">
+                <p for="id_email" class="mylabel">
+                    ایمیل : </p>
+                <div class="controls">
+                    {{ form.email | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_image" class="control-group">
+                <p class="mylabel" for="id_image">
+                    عکس :
+                </p>
+                <div class="controls">
+                    {{ form.image | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-light ">ثبت</button>
+</form>
+{%endblock mybox%}

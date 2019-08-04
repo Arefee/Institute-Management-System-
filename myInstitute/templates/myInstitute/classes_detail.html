@@ -1,0 +1,53 @@
+{%extends "myInstitute/dashboard.html"%}
+{%block title%}اطلاعات کلاس{%endblock title%}
+{%block mybox%}
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row">
+    <h4>ترم :</h4>
+    <p>{{object.term}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4> شماره ترم :</h4>
+    <p>{{object.termNumber}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4>مدرس :</h4>
+    <a href="{%url 'myInstitute:teacher-detail' object.teacherNumber_id%}" style="color: black">
+      <p>{{object.teacherNumber_id}}</p>
+    </a>
+  </div>
+  <div class="d-flex flex-row">
+    <h4> کلاس :</h4>
+    <p>{{object.classRoom}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4>روز:</h4>
+    <p>{{object.days}}</p>
+  </div>
+
+  <div class="d-flex flex-row">
+    <h4>ساعت :</h4>
+    <p style="direction: ltr">{{object.startTime}}-{{object.finishTime}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4>تاریخ شروع کلاس :</h4>
+    <p>{{object.startDate|date:"Y-m-d"}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4>تاریخ پایان کلاس :</h4>
+    <p>{{object.finishDate|date:"Y-m-d"}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4>شهریه ترم :</h4>
+    <p>{{object.paymentTerm}}</p>
+  </div>
+  <div class="d-flex flex-row">
+    <h4>هزینه کتاب :</h4>
+    <p>{{object.paymentBook}}</p>
+  </div>
+</div>
+<a class="btn btn-danger" href="{%url 'myInstitute:classes-delete' object.termNumber%}"> حذف اطلاعات</a>
+<a class="btn btn-light" href="{%url 'myInstitute:classes-update' object.termNumber%}">ویرایش اطلاعات</a>
+
+
+{%endblock mybox%}

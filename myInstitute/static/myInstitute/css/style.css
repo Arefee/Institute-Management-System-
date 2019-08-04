@@ -1,0 +1,399 @@
+body {
+  color: #130c24;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("fonts/Vazir.woff2") format("woff2"),
+    url("fonts/Vazir.woff") format("woff"),
+    url("fonts/Vazir.ttf") format("truetype"),
+    url("fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Vazir.svg#svgFontName") format("svg");
+}
+
+.myfont {
+  font-family: Vazir, "Segoe UI", Tahoma, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: Vazir, "Segoe UI", Tahoma, sans-serif;
+  color: rgb(19, 12, 36, 0.9);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-image: url("../img/papers.co-vf81-dark-blue-ornament-texture-pattern-36-3840x2400-4k-wallpaper.jpg");
+  background-repeat: repeat;
+  background-size: 300%;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding-right: 20px;
+  direction: rtl;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #667380;
+  text-decoration: none;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+.pro {
+  width: 100%;
+  height: 200px;
+  top: 0;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.user-image {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  top: 0;
+  text-align: center;
+}
+
+.user-image img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.user-name {
+  font-family: Vazir, "Segoe UI", Tahoma, sans-serif;
+  color: white;
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+}
+
+.mymenu-item {
+  text-align: right;
+  font-family: Vazir, "Segoe UI", Tahoma, sans-serif;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mymenu-item img {
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  .dropdown-content {
+    min-width: 150px;
+  }
+
+  .sidebar {
+    padding-top: 60px;
+    width: 100%;
+    width: 50px;
+    font-size: 0px;
+  }
+
+  .sidebar a {
+    text-align: center;
+    font-size: 0px;
+    margin-bottom: 20px;
+    padding-right: 0px;
+  }
+
+  .pro {
+    height: 75px;
+    margin-bottom: 20px;
+  }
+
+  .user-name {
+    font-size: 0;
+  }
+
+  .user-image {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    top: 0;
+    text-align: center;
+  }
+
+  .menu-item img {
+    margin-left: 0;
+  }
+}
+
+#main {
+  transition: margin-left 0.5s;
+  overflow: hidden;
+  background-image: url("../img/minimal-background-pattern-wordpress-1.jpg");
+  background-color: #ffffff;
+  background-repeat: repeat;
+}
+
+.navbar {
+  background-color: #130c24;
+}
+
+.openbtn {
+  cursor: pointer;
+  color: white;
+  background-color: #130c24;
+  border: none;
+  font-size: 25px;
+  width: 100%;
+  text-align: right;
+}
+
+.container {
+  min-height: 600px;
+  margin-top: 50px;
+}
+
+.mybox {
+  width: 100%;
+  background-color: rgb(2, 37, 105, 0.33);
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 50px;
+}
+
+.table {
+  text-align: right;
+  background-color: rgb(12, 0, 102, 0.5);
+}
+
+.table td {
+  color: #f1f1f1;
+}
+
+.thead {
+  background-color: #130c24;
+  color: white;
+}
+
+#result a {
+  text-decoration: none;
+}
+
+#notFound td {
+  text-align: center;
+}
+
+#show {
+  background-color: white;
+}
+
+.mybtn {
+  direction: rtl;
+}
+
+.new {
+  background-color: white;
+  padding: 8px;
+  color: #130c24;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 30px;
+  float: right;
+  border-radius: 5px;
+}
+
+.new :hover {
+  text-decoration: none;
+}
+
+.btna {
+  background-color: white;
+  width: 150px;
+  text-align: center;
+  padding: 8px;
+  margin-right: 10px;
+  color: #130c24;
+  border-radius: 5px;
+}
+
+.btna :hover {
+  text-decoration: none;
+}
+
+.form-group label {
+  width: 0;
+  display: none;
+}
+
+.form-group p {
+  direction: rtl;
+  float: right;
+  width: 20%;
+  text-align: right;
+}
+
+.form-group {
+  direction: rtl;
+}
+
+.form-group input {
+  width: 80%;
+}
+
+.form-group select {
+  width: 80%;
+}
+
+.mylabel {
+  font-size: 20px;
+  color: beige
+}
+
+.flex-row {
+  direction: rtl;
+  float: right;
+}
+
+.flex-row h4 {
+  width: 20%;
+  text-align: right;
+}
+
+.flex-row p {
+  width: 80%;
+  text-align: right;
+  font-size: 20px;
+}
+
+#inform {
+  margin-top: -200px;
+}
+
+.user-pic {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  margin-left: 50px;
+  border-radius: 50%;
+}
+
+.user-pic img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logform {
+  min-height: 700px;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  background-image: url("../img/107690.jpg");
+  background-repeat: repeat;
+  margin-top: -50px;
+}
+
+.logback {
+  min-height: 800px;
+  height: 100%;
+  width: 50%;
+  float: right;
+  background-color: #130c24;
+  background-repeat: repeat;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 800px) {
+  .mybox {
+    padding: 20px;
+  }
+
+  .form-group p {
+    width: 100%;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .form-group select {
+    width: 100%;
+  }
+
+  .flex-row h4,
+  h3 {
+    width: 100%;
+  }
+
+  .flex-row p {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #inform {
+    margin-top: 30px;
+  }
+
+  .user-pic {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btna {
+    margin-right: 0px;
+    margin-top: 10px;
+  }
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #130c24;
+  height: 50px;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 0 !important;
+}
+
+footer p {
+  margin: auto;
+  color: white;
+}
+
+footer p a {
+  color: turquoise;
+}
+
+footer p a:hover {
+  color: #7aa0ff;
+}

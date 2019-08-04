@@ -1,0 +1,18 @@
+{%extends "myInstitute/dashboard.html"%}
+{%block title%}حذف زبان آموز{%endblock title%}
+{%block mybox%}
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <h4 style="text-align: right ; direction: rtl">از حذف اطلاعات <b>{{object.firstName}} {{object.lastName}}</b> به
+            شماره زبان آموزی
+            <b>{{object.studentNumber}}</b>
+            مطمئن هستید ؟
+        </h4>
+    </fieldset>
+    <fieldset class="form-group">
+        <button class="btn btn-danger" type="submit" style="direction: rtl"> بله ، حذف شود!</button>
+        <a class="btn btn-light" href="{%url 'myInstitute:student-detail' object.studentNumber%}"> خیر </a>
+    </fieldset>
+</form>
+{%endblock mybox%}

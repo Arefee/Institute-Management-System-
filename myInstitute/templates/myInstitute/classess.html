@@ -1,0 +1,60 @@
+{%extends "myInstitute/dashboard.html"%}
+
+{%block title%}کلاس ها{%endblock title%}
+{%block mybox%}
+<div class="d-flex justify-content-between">
+    <div>
+        <input id="myInput" onkeyup="myFunction()" type="text" class="form-control" name="search" placeholder="جستجو"
+            style="direction: rtl" />
+    </div>
+    <div class="new"><a href="{%url 'myInstitute:classess-create'%}">ایجاد کلاس جدید</a></div>
+</div>
+<div id="testTable" class="table-responsive">
+    <table id="myTable" class="table  table-striped ">
+        <thead class="thead ">
+            <tr>
+                <th></th>
+                <th>ساعت برگذاری</th>
+                <th>روز برگذاری</th>
+                <th>شماره کلاس</th>
+                <th> مدرس</th>
+                <th>کلاس </th>
+                <th>ترم</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {%for class in classes%}
+            <tr>
+                <td><a href="{%url 'myInstitute:classes-detail' class.termNumber %}">
+                        <div class="btn btn-primary">نمایش اطلاعات </div>
+                    </a></td>
+                <td>{{class.startTime}} - {{class.finishTime}}</td>
+                <td>{{class.days}}</td>
+                <td>{{class.classRoom}}</td>
+                <td>{{class.teacherNumber_id}}</td>
+                <td>{{class.term}}</td>
+                <td>{{class.termNumber}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-between">
+    <div>
+        <ul id="pagination" class="pagination"></ul>
+    </div>
+    <div id="result" class="mybtn">
+        <a class="btn">نمایش بیشتر ...</a>
+    </div>
+    <div>
+        <select id="show" onchange="changePagination(this.value)">
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="50">100</option>
+        </select>
+    </div>
+</div>
+{%endblock mybox%}

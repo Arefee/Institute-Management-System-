@@ -1,0 +1,11 @@
+{%extends "myInstitute/dashboard.html"%}
+{%block title%} بایگانی {%endblock title%}
+{%block mybox%}
+<div class="d-flex flex-column">
+    <div class="btn btn-light" style="margin:10px; "><a href="{%url 'myInstitute:cash'%}"
+            style="text-decoration: none">پرداخت نقدی</a>
+    </div>
+    <div class="btn btn-light" style="margin:10px; "><a href="{%url 'myInstitute:installment'%}"
+            style="text-decoration: none">پرداخت اقساط </a></div>
+</div>
+{%endblock mybox%}

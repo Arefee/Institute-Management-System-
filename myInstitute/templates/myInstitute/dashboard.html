@@ -1,0 +1,70 @@
+{%extends "myInstitute/base.html"%}
+{% load static %}
+{%block body%}
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="pro">
+        <div class="user-image" id="user-image">
+            <img src="{% static 'myInstitute/img/download.png'%}" />
+        </div>
+        <div class="user-name">
+            <p>آموزشگاه</p>
+        </div>
+    </div>
+    <div class="d-flex flex-column">
+        <div class="mymenu-item">
+            <a href=" {%url 'myInstitute:myInstitute-students'%}">
+                <img src="{% static 'myInstitute/img/student-read-book-high-education-school-512.png'%}" />
+                زبان آموزان
+            </a>
+        </div>
+
+        <div class="mymenu-item">
+            <a href="{%url 'myInstitute:myInstitute-teachers'%}">
+                <img
+                    src="{%static 'myInstitute/img/education_004-teaching-teacher-teach-instructor-study-school-512.png'%}" />مدرسان
+            </a>
+        </div>
+        <div class="mymenu-item">
+            <a href="{%url 'myInstitute:myInstitute-classess'%}">
+                <img
+                    src="{%static 'myInstitute/img/80ddad15a4488ddf2f19da81274e727e-teaching-class-icon-by-vexels.png'%}" />کلاس
+                ها
+            </a>
+        </div>
+        <div class="mymenu-item">
+            <a href="{%url 'myInstitute:myInstitute-archive'%}">
+                <img src="{%static 'myInstitute/img/bag-dollar-512.png'%}" />بایگانی
+            </a>
+        </div>
+        <div class="mymenu-item">
+            <a href="{% url 'login' %}"><img src="{%static 'myInstitute/img/img_376344.jpg'%}" />خروج </a>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div class="navbar ">
+        <button class=" openbtn" onclick="openNav()">☰</button>
+    </div>
+    <div class="container">
+        <h1>{%block title%}{%endblock title%}</h1>
+        <div class="mybox">
+
+            {%block mybox%}{%endblock mybox%}
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Copyright © 2019,
+            <a href="https://github.com/Arefee" data-toggle="tooltip" data-placement="top" title="My Github">Arefe
+                Hamidi</a>. All rights reserved.
+        </p>
+    </footer>
+</div>
+
+<script type="text/javascript" src="{%static 'myInstitute/js/toggleSidebar.js'%}"></script>
+<script type="text/javascript" src="{%static 'myInstitute/js/paggination.js'%}"></script>
+<script type="text/javascript" src="{%static 'myInstitute/js/search.js'%}"></script>
+{%endblock body%}

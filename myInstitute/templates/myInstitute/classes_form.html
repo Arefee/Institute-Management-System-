@@ -1,0 +1,101 @@
+{%extends "myInstitute/dashboard.html"%}
+{%load crispy_forms_tags%}
+
+{%block title%} اطلاعات کلاس{%endblock title%}
+{%block mybox%}
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <div class="form-group">
+            <div id="div_id_term" class="control-group">
+                <p for="id_term" class="mylabel">
+                    ترم : </p>
+                <div class="controls">
+                    {{ form.term | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_classRoom" class="control-group">
+                <p for="id_classRoom" class="mylabel">
+                    کلاس : </p>
+                <div class="controls">
+                    {{ form.classRoom | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_startDate" class="control-group error">
+                <p for="id_startDate" class="mylabel">
+                    تاریخ شروع : </p>
+                <div class="controls">
+                    {{ form.startDate | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_finishDate" class="control-group error">
+                <p for="id_finishDate" class="mylabel">
+                    تاریخ پایان : </p>
+                <div class="controls">
+                    {{ form.finishDate | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_days" class="control-group">
+                <p for="id_days" class="mylabel">
+                    روز برگذاری : </p>
+                <div class="controls">
+                    {{ form.days | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_startTime" class="control-group">
+                <p for="id_startTime" class="mylabel">
+                    ساعت شروع : </p>
+                <div class="controls">
+                    {{ form.startTime | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_finishTime" class="control-group">
+                <p for="id_finishTime" class="mylabel">
+                    ساعت پایان : </p>
+                <div class="controls">
+                    {{ form.finishTime | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_paymentTerm" class="control-group">
+                <p for="id_paymentTerm" class="mylabel">
+                    شهریه ترم : </p>
+                <div class="controls">
+                    {{ form.paymentTerm | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_paymentBook" class="control-group">
+                <p for="id_paymentBook" class="mylabel">
+                    هزینه کتاب : </p>
+                <div class="controls">
+                    {{ form.paymentBook | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="div_id_teacherNumber" class="control-group">
+                <p for="id_teacherNumber" class="mylabel">مدرس :</p>
+                <div class="controls">
+                    {{ form.teacherNumber | as_crispy_field }}
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-light ">ثبت</button>
+</form>
+{%endblock mybox%}

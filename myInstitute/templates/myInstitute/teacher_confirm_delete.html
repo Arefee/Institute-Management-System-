@@ -1,0 +1,14 @@
+{%extends "myInstitute/dashboard.html"%}
+{%block title%}حذف مدرس {%endblock title%}
+{%block mybox%}
+<form method="POST">
+    {% csrf_token %}
+    <h4 style="text-align: right; direction: rtl">از حذف اطلاعات <b>{{object.firstName}} {{object.lastName}}</b> به
+        شماره مدرس
+        <b>{{object.teacherNumber}}</b>
+        مطمئن هستید ؟
+    </h4>
+    <button class="btn btn-danger" type="submit" style="direction: rtl"> بله ، حذف شود!</button>
+    <a class="btn btn-light" href="{%url 'myInstitute:teacher-detail' object.teacherNumber%}"> خیر </a>
+</form>
+{%endblock mybox%}
